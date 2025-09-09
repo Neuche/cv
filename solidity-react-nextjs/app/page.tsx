@@ -86,7 +86,7 @@ export default function Page() {
         
         {!loading && tokens.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500">Token data works locally</p>
+            <p className="text-gray-500">Demo data (live API works locally)</p>
           </div>
         )}
         </div>
