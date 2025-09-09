@@ -46,6 +46,12 @@ next-env.d.ts
 *.swo
 *~
 
+# Claude Code configuration
+.claude/
+
+# Personal documents
+"CVs posta/"
+
 # OS generated files
 .DS_Store
 .DS_Store?

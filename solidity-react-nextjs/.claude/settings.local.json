@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//c/Users/Ext/Documents/cv/**)"
-    ],
-    "deny": [],
-    "ask": []
-  }
-}
