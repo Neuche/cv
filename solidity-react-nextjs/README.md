@@ -2,6 +2,8 @@
 
 A Next.js web application featuring a proof-of-work Ethereum faucet on Sepolia testnet with real-time token price tracking.
 
+**Live Demo:** [https://solidity-react-nextjs-5nf4ukdhn-neuches-projects.vercel.app](https://solidity-react-nextjs-5nf4ukdhn-neuches-projects.vercel.app)
+
 ## Features
 
 ### 🚰 Balance-Based Ethereum Faucet

@@ -20,7 +20,9 @@ A full-stack Ethereum faucet application built with modern web technologies.
 
 **Smart Contract:** Deployed on Sepolia testnet with anti-spam protection through computational puzzles
 
-**Live Demo:** [View Project](./solidity-react-nextjs/)
+**Live Demo:** [https://solidity-react-nextjs-5nf4ukdhn-neuches-projects.vercel.app](https://solidity-react-nextjs-5nf4ukdhn-neuches-projects.vercel.app)
+
+**Source Code:** [View Source](./solidity-react-nextjs/)
 
 ---
 
