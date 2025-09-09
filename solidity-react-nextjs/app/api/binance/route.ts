@@ -18,9 +18,15 @@ export const dynamic = 'force-dynamic'; // Disable caching for this route
 export const fetchCache = 'force-no-store'; // Prevent caching of fetch requests
 
 export async function GET() {
+  console.log('Binance API route called');
   try {
+    console.log('Fetching from:', BINANCE_API_URL);
     const response = await fetch(BINANCE_API_URL, {
-      cache: 'no-store' // Ensure the browser doesn't cache this request
+      cache: 'no-store',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+      },
+      signal: AbortSignal.timeout(8000) // 8 second timeout for Vercel
     });
     
     if (!response.ok) {
@@ -52,11 +58,16 @@ export async function GET() {
     });
   } catch (error) {
     console.error('Error fetching Binance data:', error);
+    
+    // Return empty array instead of error object to prevent frontend .map() issues
     return new Response(
-      JSON.stringify({ error: 'Failed to fetch token data' }), 
+      JSON.stringify([]), 
       {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        status: 200, // Return 200 with empty array instead of 500 error
+        headers: { 
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-store, max-age=0'
+        }
       }
     );
   }
