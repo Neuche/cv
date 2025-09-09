@@ -29,6 +29,11 @@ export async function GET() {
     
     const allTokens = await response.json();
     
+    // Ensure allTokens is an array
+    if (!Array.isArray(allTokens)) {
+      throw new Error('Invalid response format from Binance API');
+    }
+    
     // Filter and map the tokens in a single pass
     const filteredTokens = allTokens
       .filter((token: any) => POPULAR_TOKENS.includes(token.symbol))

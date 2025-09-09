@@ -19,9 +19,17 @@ export default function Page() {
       try {
         const response = await fetch('/api/binance');
         const data = await response.json();
-        setTokens(data);
+        
+        // Check if data is an array (success) or error object
+        if (Array.isArray(data)) {
+          setTokens(data);
+        } else {
+          console.error('API returned error:', data.error || 'Unknown error');
+          setTokens([]);
+        }
       } catch (error) {
         console.error('Error fetching token data:', error);
+        setTokens([]);
       } finally {
         setLoading(false);
       }
